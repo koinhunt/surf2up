@@ -1,18 +1,27 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Surf2Up Mini App</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Surf2Up</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
-    <h1>Selamat Datang di Surf2Up!</h1>
-    <p id="username">Memuat pengguna...</p>
+    <h1>Selamat datang di Surf2Up!</h1>
+    <p>Selesaikan tugas dan kumpulkan token.</p>
 
-    <button onclick="showTasks()">Lihat Tugas</button>
-    <button onclick="checkBalance()">Cek Saldo</button>
+    <div class="task-section">
+      <h2>Tugas Hari Ini</h2>
+      <button onclick="completeTask(1)">Kunjungi Website Sponsor</button>
+      <button onclick="completeTask(2)">Tonton Video Iklan</button>
+    </div>
+
+    <div class="balance-section">
+      <h2>Saldo Token Kamu</h2>
+      <p><span id="balance">0</span> SURF</p>
+    </div>
   </div>
 
   <script src="script.js"></script>

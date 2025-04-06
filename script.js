@@ -1,14 +1,13 @@
-let tg = window.Telegram.WebApp;
+
+function completeTask(taskId) {
+  let current = parseInt(localStorage.getItem("balance")) || 0;
+  current += 10; // setiap tugas bernilai 10 token
+  localStorage.setItem("balance", current);
+  document.getElementById("balance").textContent = current;
+  alert("Tugas " + taskId + " selesai! Kamu mendapatkan 10 SURF.");
+}
 
 window.onload = function () {
-  tg.expand();
-  document.getElementById("username").innerText = "Halo, " + tg.initDataUnsafe.user.first_name;
+  let current = parseInt(localStorage.getItem("balance")) || 0;
+  document.getElementById("balance").textContent = current;
 };
-
-function showTasks() {
-  alert("Tugas:\n1. Join Channel\n2. Retweet\n3. Invite Teman");
-}
-
-function checkBalance() {
-  alert("Saldo kamu: 50 TRWD");
-}
